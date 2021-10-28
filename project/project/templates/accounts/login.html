@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<form method="POST">
+<form style="margin-top: 30px;" method="POST">
     {% csrf_token %}
-    {% if error %}
-    <p style="color: red;">{{error}}</p>
+    {% if Error %}
+    <p style="color: red;">{{Error}}</p>
     {% endif %}
     <div>
         <input type="text" name="username" placeholder="username">

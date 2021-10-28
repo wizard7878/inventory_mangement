@@ -8,15 +8,15 @@ def login_view(request):
         password = request.POST.get("password")
         user = authenticate(request,username=username,password=password)
         if(user is None):
-            context = {"Error","Invalid username or password"}
-            return render(request,"accounts/logout.html",context=context)
+            context = {"Error":"Invalid username or password"}
+            return render(request,"accounts/login.html",context=context)
         login(request,user)
         return redirect("/")
     return render(request,"accounts/login.html",{})
 
-def logout_view(request):
-    return render(request,"accounts/logout.html",{})
+# def logout_view(request):
+#     return render(request,"accounts/logout.html",{})
 
 
-def register_view(request):
-    return render(request,"accounts/register.html",{})
+# def register_view(request):
+#     return render(request,"accounts/register.html",{})

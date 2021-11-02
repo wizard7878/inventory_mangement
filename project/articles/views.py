@@ -2,9 +2,10 @@ from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from articles.models import Article
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required
 def article_create_view(request):
     context = {}
     if request.method == "POST":

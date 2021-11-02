@@ -3,11 +3,10 @@
 {% block content %}
 <br/><br/><br/>
     {% if not created %}
+
+    
     <form action="." method="post">
-        <input type="text" name="title" placeholder="Title">
-        <br/><br/>
-        <textarea name="content"></textarea>
-        <br/><br/>
+        {{form.as_p}}
         <button type="submit">Create Article</button>
         {%csrf_token%}
     </form>

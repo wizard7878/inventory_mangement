@@ -7,12 +7,13 @@
     {% if Error %}
     <p style="color: red;">{{Error}}</p>
     {% endif %}
-   {{form.as_p}}
-    <button type="submit">Login</button>
+    {{form.as_p}}
+    
+    <button type="submit">Register</button>
 </form>
-<p>Don't you have an account?? <a href="/register">Register</a></p>
+<p>Already have an account?? <a href="/login">Login</a></p>
 {% else %}
 
-<p> You are logged in. would you like to <a href="/logout">logout?</a></p>
+<p> You are already loggedin and you cannot register. would you like to <a href="/logout">logout?</a></p>
 {% endif %}
 {% endblock %}

@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .view import home_view
+from accounts import views as account_view
+from articles import views as article_view
+
 
 urlpatterns = [
+    path('', home_view),
+    path("login/",account_view.login_view),
+    path("logout/",account_view.logout_view),
+    path("register/",account_view.register_view),
+    path('articles/', article_view.article_search_view),
+    path("articles/create/",article_view.article_create_view),
+    path('articles/<int:id>/', article_view.article_detail_view),
     path('admin/', admin.site.urls),
 ]

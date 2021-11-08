@@ -1,7 +1,7 @@
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from articles.models import Article
+from .models import Article
 from django.contrib.auth.decorators import login_required
 from articles.forms import ArticleForm
 # Create your views here.
